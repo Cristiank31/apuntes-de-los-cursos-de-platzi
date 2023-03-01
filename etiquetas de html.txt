@@ -1,0 +1,28 @@
+LAYOUT - etiquetas de estructura principal
+
+<header> - define el encabezado de una pagina
+
+<nav> - define una barra de navegacion que incluye enlaces
+
+<section> - define una seccion de la pagina
+
+<footer> - define el pie de pagina o de seccion
+
+<aside> - 
+
+<article> - define un articulo , el cual puede tener su propio header, nav o footer
+
+
+Enlaces 
+
+<a>
+
+
+textos
+
+<h1> hasta <h6> - diferentes texto h1 mas importante h6 menos importante
+
+<p> - estructurar parrafos
+
+<span> estructurar pequeños textos dentro de un parrafo
+

@@ -1,0 +1,234 @@
+Tipo de valores:
+number (1228)
+string (texto)
+boolean (true, false)
+objet ([],{})
+
+typeof - para saber que tipo de valor es.
+
+var - palabra reservada para las variables (var nombre = "Cristian")
+
+function - palabra reservada para las funciones
+funcion declarativa - function miFuncion (parametros) { operacion que va hacer la funcion}
+funcion expresiva - var function = function (){}
+function saludar (estudiante) { return ( `Hola ${estudiante}`)}
+function suma(a,b,c) {
+    var resultado = a + b * c;
+    return resultado;
+}
+
+coercion - es cuando se cambia el tipo de valor ya sea explicitamente o implicitamente
+implicitamente - 2 + "7" da = 27 (string) o 2 * "7" da = 14 (number)
+explicitamente - var a = 20 (number) y var b = a + "" daria de resultado el mismo 20 pero como string o tambien var c = string(a) o var d = number(c)
+
+valores verdaderos y valores falsos (para validar que si es falso o verdadero se utiliza en la consola boolean(el valor que se quiera validar))
+vardaderos - cualquier numero mayor a 0," "(cualquier string o espacio vacio),[] (cualquier array asi este vacio),{}(aunque este vacio),function (aunque este vacia),true
+falsos - 0,null,NaN,undefine,false,""(sin espacio).
+
+Operadores 
++,-,*,/ - para operaciones matematicas
++ - para concatenar (sumar) strings u otros valores 
+! - para negar cualquier cosa - !false es = a true
+= - para asiganar valores
+== - para comparar valores (3 == "3" = true son iguales)
+=== - para compara valores y su tipo (3 === "3" = false no son iguales uno es number el otro string)
+< - para validar si un numero es menor que otro (5<6  true )
+> - para validar si un numero es mayor que otro (5>6 false )
+<= - para validar en 2 pasos si un numero es menor o igual a otro (5<=6 true o 5<=5 true)
+>= - para validar en 2 pasos si un numero es mayor o igaul a otro (5>=6 false 5>=5 true)
+&& - para validar si las 2 variables son verdaderas para cumlplir una condicion(a && b ) si a y b son verdaderas se cumple la condicion
+|| - para validar si 1 de las 2 condiciones son verdaderas (a || b) si a o b son verdaderas se cumple la condicion
+++ - para incrementar el numero de una variable en +1 ( var edad = 20 si edad++ edad=41) tambien funciona para disminuir 1 con --
++= - para incrementar el numero de una variable en una cantidad deseada (edad+=5) tambien funciona para disminuir -=
+
+
+condicional if:
+if - para validar condiciones que solo se ejecutan si la condicion en true (if (true){})
+else if - segundo paso para seguir validando una condicion si la primera validacion(if) no es true (if(false){} else if(){} )
+else - ultimo paso en una validacion si el if no es true y else if tambien es false ocurrira lo que se ponga en corchetes de else ( if(false){} else if(false) {} else{}) 
+
+var edad = 18
+
+if (edad === 18) {
+  return ("bienvenido puedes votar por 1ra vez");
+} else if (edad > 18) {
+    return ("puedes votar nuevamente");
+} else {
+  return ("aun no puedes votar");
+}
+
+tambien se pueden hacer if y else en una sola linea con un sigo de ?;  condition ? true : false
+var numero = 1;
+ 
+var resultado = numero === 1 ? "Si, soy un uno" : "No, no soy un uno";
+
+condicional switch
+
+se utilizar para validar casos, switch (){}, es muy importante al final de cada case poner break para que no se rompa el codigo y siga validando los casos.
+se utiliza default al final del switch si ninguno de los casos es true
+
+var numero = 1;
+
+switch (numero) {
+  case 1:
+	console.log ("si soy un 1");
+	break;
+  case 5:
+	console.log ("si soy un 5");
+	break;
+  case 10:
+	console.log ("si soy un 10");
+	break;
+  default:
+	console.log("No soy nada");
+}
+
+
+Arrays - es una estructura de datos que puede guardar varios tipos de valores (strings,numbers,objets u another arrays) y su estructura es, var nombredelavar = [aqui se guardan los valores]
+ej: var frutas = ["Manzanas","Peras","Fresas"],
+nombredelarray.length - para saber la longitud de un array
+var masFrutas = frutas.push("Uvas") - para agregar un valor al final de un array
+var retirarfruta = frutas.pop("Uvas") - para eliminar el ultimo valor de un array
+var nuevafruta = frutas.unshift("Uvas") - para agregar un valor al inicio del array
+var quitarfruta = frutas.shift("Uvas") - para eliminar el primer valor de un array
+var posicion = frutas.indexof(lo que se quiera buscar) - para saber la posicion de un valor dentro de un array
+
+loops (ciclos) - para repetir funciones en ciclos hasta que la funcion se rompa o deje de ser true.
+
+loop for - 
+
+var estudiantes = ["Cristian","Camilo","Fabricio","Roberto"]
+
+function saludarEstudiantes (estudiante) {
+	console.log(`Hola, ${estudiante}`);
+}
+
+for (var i = 0; i < estudiantes.length; i++){
+	saludarEstudiantes(estudiantes[i]);
+}
+
+var estudiantes = ["Cristian","Camilo","Fabricio","Roberto"]
+
+function saludarEstudiantes (estudiante) {
+	console.log(`Hola, ${estudiante}`);
+}
+
+for (var estudiante of estudiantes) {
+	saludarEstudiantes(estudiante)
+}
+
+loop while - funciona de forma parecida al for pero este lo que hace es ir sacando valores de array con el shift
+
+var estudiantes = ["Cristian","Camilo","Fabricio","Roberto"];
+
+function saludarEstudiantes (estudiante) {
+	console.log(`Hola, ${estudiante}`);
+}
+
+while (estudiantes.length > 0 ) {
+	var estudiante = estudiantes.shift();
+	saludarEstudiantes(estudiante)
+}
+prompt - imprime un popup al usuario y les permite escribir.
+
+let respuesta = prompt("Cuanto es 2 + 2") - imprime en la pantalla un popup con la la pregunta y guarda en la variable lo que el usuario responda
+
+loop con prompt - imprime un popup al usuario y les permite escribir algo mediante la creacion de una variable y se ejecuta hasta que sea true con el loop while
+
+let respuesta;
+
+while (respuesta !="4"){
+    let pregunta = prompt("cuanto es 2 + 2?")
+    respuesta = pregunta;
+} 
+
+En este caso se repite el loop hasta que la respuesta sea 4.
+
+
+
+Objets - los objetos son representacion de objetos fisicos que tienes varias caracteristicas en objetos de codigo ( var nombredelavar = {} )
+
+var miCarro = {
+	marca: "Toyota",
+	modelo: "Corolla",
+	año: 2020,
+	 function (){
+		console.log(`Auto ${this.modelo} ${this.año } `);
+	}
+};
+
+Para separar las caracteristicas dentro del objeto se debe de poner siempre una coma(,)
+para mandar a llamar una caracteristica en especifico del objeto se utiliza el nombre de la variable + un punto y la caracteristica o funcion requerida ( miCarro.detallesDelAuto)
+
+
+Funcion constructora:
+
+sirve para generar objetos de manera mas automatica
+
+function carro(marca,modelo,año) {
+	this.marca = marca;
+	this.modelo = modelo;
+	this.año = año;
+}
+
+var carroNuevo = new carro("Tesla","Model 3", 2019) 
+
+
+Metodos de recorrido de arrays:
+
+estos metodos sirven para filtrar informacion de un array
+
+metodo filter 
+
+var articulos = [
+  { nombre: "Bici", costo: 3000 },
+  { nombre: "TV", costo: 2500 },
+  { nombre: "Libro", costo: 320 },
+  { nombre: "Celular", costo: 10000 },
+  { nombre: "Laptop", costo: 20000 },
+  { nombre: "Teclado", costo: 500 },
+  { nombre: "Audifonos", costo: 1700 },
+]
+
+var articulosFiltrados = articulos.filter(function (articulo) {
+  return articulo.costo <= 500
+})
+
+metodo map 
+
+var nombreArticulos = articulos.map(function (articulo) {
+  return articulo.nombre
+})
+console.log(nombreArticulos)
+
+metodo find
+
+El método find consiste en encontrar el primer elemento de un array que cumpla con la condición especificada en la función 
+
+var algunArticulo = articulos.find(function (articulo) {
+  return (articulo.nombre === "Laptop")
+});
+
+metodo forEach
+
+Con este metodo no se genera un nuevo array solo devuelve las caracteristicas de los objetos que cumplan el parametro de la funcion.
+
+
+articulos.forEach(function (articulo) {
+  console.log(articulo.nombre)
+});
+
+metodo some
+
+genera un array que solo verifica si la funcion es true or false.
+
+var existeArticulo = articulos.some(function (articulo) {
+  return articulo.costo <= 700
+});
+
+
+
+
+
+
+

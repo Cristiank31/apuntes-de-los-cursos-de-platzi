@@ -1,0 +1,83 @@
+explorer.exe + directorio que se quiera abrir ( explorer . para abrir el directorio actual )
+
+touch - crear archivo
+mkdir - crear carpetas
+mv - mover archivos y renombrar archivos y carpetas solo dejando un espacio y poniendo el nuevo nombre
+ls - visualizacion de los archivos en carpeta
+ls * - para buscar archivos con terminacion expecifica ( ls *.txt o ls *.html )
+ls + lo que se quiera buscar + * ( ls archivo* )
+ls + lo que se quiera buscar + ? para easpecificar cantidad de caracteres adicionales al nombre ( ls archivo? o ls archivo???? )
+ls + [] + * para filtrar archivos por su caracter de inicio ( ls [a]* o ls [b]* ) 
+ls -la - muesta absolutamente todos los arcivos que hayan en el directorio
+rm - eliminar archivos y + -i para agregar confirmacion 
+rm -r eliminar carpetas ideal con la i (ri)
+rm -rf forzar al sistema a eliminar lo que sea 
+code . - abrir visual estudio 
+cd + nombre de carpeta oara moverse 
+sudo - permiso de admin
+pwd - ruta de donde estoy
+alt 126 para ~
+cat - para revisar contenido de un archivo 
+clear y ctrl l -  limpiar la terminal	
+sudo apt-get update - Comando para preguntarle al repositorio de dependencias si hay actualizaciones.
+sudo apt-get upgrade - Con este se aplican las actualizaciones.
+npx - instalacion de aplicaciones temporalmente
+npm - instalacion de aplicaciones permanente 
+rm + nombre del archivo - eliminar archivos
+rm -rf - borrar carpetas con contenido
+rm -d - borrar carpetas vacias
+file - informacion del tipo de archivo
+tree - para mostras las carpetas ramificadas + -L para elegir el nvl de profundizacion
+cp - para copiar archivos
+cp -r - para copiar directorio con los archivos que tiene dentro
+.. - atras
+head - muestra las primeras 0 lineas de texto de un archivo sin abrirlo
+head + nombre de archivo + -n y la cantidad de lineas de texto que quiera visualizar ( head texto.txt -n 20 )
+tail - muestra las ultimas 10 lineas e igual con head se le agrega -n para mostras las lineas deseadas
+less - muestra todo el arcivo de texto de manera interactiva, se puede utilizar / para buscar una palabra en el texto mientras se esta en este comando y q para salir de la interfaz interactiva del comando
+xdg-open - para abrir archivos en el editor de texto ( visual estudio )
+| - para encadenar comandos entre si relacionando la salida de un comando con la entrada de otro ( ls -lh | cat  )
+; - para ejecutar comandos en orden ( ls; mkdir hola; cowsay "holi" )
+& - para ejecutar comandos al mismo tiempo de manera asincrona
+&& - condicionar comandos ( mkdir test && cd test && touch holi.txt )
+|| - para comandos encadenados sin condicionar y solo se ejecuta el primero que se pueda hacer ( mkdir test || cd test || touch holi.txt )
+chmod - para cambiar permiso de archivos ( 7 permiso de lectura-escritura-ejecucion  5 permiso de lectura- ejecucion 1 permiso de lectura )
+chmod u-r + el archivo para quitar permiso de lectura y para dar permiso de lectura solo cambiar el - por + ( U= usuario  G=grupo O=todos )
+ln -s <ruta> <Nombre> - para crear link simbolico ( atajo de ruta )
+sudo su - cambiar de usuario
+passwd - cambiar contraseña de usuario
+code .bashrc - para abrir la bash en visual estudio ( para crear alias permanentes y crear variables de entorno ( NOMBRE_VARIABLE_MAYUSCULA="la variable requerida"y cuando se termine poner comando bash para guardar cambios en la terminal)
+alias <nombre>="comando" - para crear alias (  alias cc="code /home/cristiank31/personalprojets/projectfirtsone/index.html" )
+code <archivo> - abrir un archivo directamente en VS solo agregando la ruta del archivo ( code /home/cristiank31/personalprojets/projectfirtsone/index.html )
+which - para  buscar bins ( archivos de programas ejecutables y directorios ) y whereis - para una busqueda mas profunda
+find - parecido al comando tree te muestra la ramificacion de un directorio  ( find ./ -name *.html  o find ./ -name archivo ) ( find ./ -type f  -name *.log o con d en vez de f para directorios ) ( find /. -size 5M ) 
+grep - para buscar coincidencias en un archivo de texto ( grep + lo que se desee buscar + el archivo donde se va a buscar )
+grep -c - para contar cuantas coincidencias de una palabra ( grep -c the movies.csv y con grep -ci the movies.csv para ignorar mayusculas o minusculas )
+grep -v - para buscar todos los textos que no coincidan con la busqueda ( grep -v the movies.csv o grep -vi the movies.csv para ignorar si es mayuscula o minuscula )
+ping - para saber si una pagina esta en funcionamiento
+wget - para descargar archivo de texto de una pagina ( wget www.google.com )
+traceroute - para verificar las ip por la cual nos redirecciona una pagina web ( traceroute www.google.com )
+tar -cvzf + nombre como va a quedar el archivo con .tar.gz + la carperta que se va a comprimir ( tar -cvzf tocompress.tar.gz tocompress )
+tar -xvzf + nombre del archivo que se va a descomprimir 
+zip -r + nombre del nuevo archivo + el directorio que se va a comprimir - para comprimir archivos con .zip ( zip -r comprimidito.zip tocompress )
+unzip + nombre de archivo para descomprimir ( unzip comprimidito )
+ps - para saber que procesos estan corriendo en la terminal
+top - para ver los procesos que mas recursos estan consumiendo 
+kill + el pid del proceso para forzar su cierre 
+jobs - para ver los procesos que se encuentran en el background
+ctrl z - para procesos y mandarlos al background
+fg + el numero del proceso en background para traerlo al foreground 
+bg - tambien para mandar procesos al background , tambien se puede hacer poniendo & al final de un comando 
+vim - editor de texto desde la terminal 
+vim + nombrearchivo.html para crear un archivo en vim ( i para empezar a escribir, / para buscar palabras en el documento, dd sobre una linea para borrarla por completo, :w para guardar, :q para salir y ! para forzar salida del editor)
+
+stdin ( standar input ) 0
+stdout ( standar outout ) 1
+stderr ( standar error ) 2
+concatenar archivos >> ( osea que no crea un archivo nuevo sino que sobre escriba el existente 
+
+
+
+
+
+

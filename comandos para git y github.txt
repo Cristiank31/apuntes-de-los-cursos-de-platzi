@@ -1,0 +1,138 @@
+	SCV o VCS ( en ingles ) - sistema de control de versiones - registra y guarda los cambios que se le hagan a archivos
+
+git init  - iniciar el repositorio git en tu directorio
+
+git add + "nombre del archivo" - para que git le haga seguimiento al archivo y sepa si hay cambios ( se crea solo temporalmente en la RAM o staging y para hacerlo permanente cuando se hace commit)
+
+git commit -m "archivo V1" - manda los cambios de los archivos en el sistema
+
+git commit -am "nombre del commit" - para hacer add y commit en un solo comando
+
+git add -A - para agregar todos los cambios que se hayan hecho en el directorio
+
+git status - para ver los cambios que se han hecho pero no se han añadido
+
+git show - muestra que es lo que ha cambiado en un archivo y por quien y cuando
+
+git log + nombre del archivo-  historial completo de un archivo 
+
+git log -p - muestras las versiones y que ha cambiado en cada una
+
+git push - para enviar informacion a repositorio remoto
+
+git pull - para traer informacion de repositorio remoto
+
+git marge - para fusionar varias branch en un nuevo commit 
+
+git diff + id del commit + id del otro commit que se va a comparar- para ver que fue lo que cambio entre 2 versiones de un archivo ( 2 commits diferentes ) en blanco lo que no ha cambiado, en verde lo que se agrego y en rojo como es actualmente
+ 
+git reset + id del commit + --hard ( para que todo cambie a esta version ) o -- soft ( para dejar la informacion que se escuentra en add (staging)
+
+git checkout + id del commit + nombre del archivo - para ver commits anteriores sin modificar el head o actual commit( para volver al commit actual es el mismo comando pero se remplaza el id del commit por master )
+
+git rm --cached: Elimina los archivos de nuestro repositorio local y del área de staging, pero los mantiene en nuestro disco duro
+
+git rm --force: Elimina los archivos de Git y del disco duro
+
+git reset HEAD - Este es el comando para sacar archivos del área de staging, para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add
+
+git clone + url - para traer repositorios de internet y copiarlos en mi repositorio (github, gitlabs)
+
+git fetch - para traer archivos remotos a mi repositorio local sin copiarlos a mis archivos
+
+git branch + nombre de la nueva rama - para crear ramas adicionales a la del proyecto principal o head
+
+git branch -m new-name - para cambiar nombre de una rama
+
+git show-branch - muestra las ramas que existen y cuales han sido su historia 
+
+git show-branch --all - muestra un poco mas de informacion 
+
+git checkout + nombre de la rama - para cambiar la rama de desarrollo
+
+git remote add origin (nombre que se le suele poner a la rama principal del remoto) + url de github - para conectar mi directorio git con github
+
+git remote -v para ver si esta vinculada mi git con github
+
+git pull origin main - para traer informacion github o para actualizar un commit creado en github al repositorio local y ( --allow-unrelated-histories - forzar el merge con mi rama main de git por conflictos )
+
+git push origin master:main - para enviar la rama master de git a la rama main de github ( rama master de github )
+
+ssh-keygen -t rsa -b 4096 -C "youremail@example.com" - para crear llaves rsa ( encriptacion )
+
+git remote set-url origin + la nueva URL - para cambiar la url de un repositorio remoto
+
+git tag -a + nombre del tag -m "nombre del "commit" que se va a crear" + el hash o id del commit que se va a tagear
+
+git log --all --graph --decorate --oneline para encontar los ID de los commits para crear tags 
+
+git tag - para ver los tag que tengo
+
+git show-ref --tags - para saber a commit esta conectado un tag
+
+git push origin --tags - para enviar a github mis tag de git
+
+git tag -d nombre del tag para eliminar tags en git
+
+git push origin :refs/tags/nombre del tag
+
+gitk - para mostrar la historia de las branch de manera visual
+
+git clone + url - para clonar un repositorio remoto 
+
+esc - shift - zz - para salir del editor de vi 
+
+.gitignore - para ponerle a un archivo nuevo para que git lo ignore y en este archivo hay que poner los bins que el sistema debe ignorar (*.jpg) y cuando se haga el push no se envie este archivo
+
+readme.md - es un archivo que se crea para mostrar una introduccion a nuestro repositorio a las personas que llegan a mirarlo
+
+git rebase - tiene la misma funcion que merge pero con rebase se elimina del historial los commits - primero se le hace rebase a la branch que se va a eliminar y despues se le hace rebase a la branch principal o que se va a mantener
+
+git stash - para guardar cambios del staging sin hacer commits para cambiarnos de ramas
+
+git stash save "mensaje identificador del elemento del stashed" - para guardar los stash con un nombre en especifico
+
+git stash pop - para traer el stash 0 devuelta
+
+git stash pop stash@{<num_stash>} - para traer un stash en especifico con su numero de stash list
+
+git stash list - para ver que stash se encuentran guardados para traerlos devuelta
+
+git stash drop - para eliminar el stash 0 de la memoria
+
+git stash drop stash@{<num_stash>} - para eliminar un stash en especifico con el numero de stash list
+
+git stash clear - eliminar todos los stash guardados
+
+git stash branch nombre_de_rama - para crear una branch nueva con un stash guardado
+
+git clean - para eliminar archivos o cambios que no quieres implemetar que se encuentran en staging ( sin add)
+
+git clean --dry-run - muestra todos los archivos que no se han agragado con add
+
+git clean -f - eliminar archivos que no esten agregados ( sin el comando add )
+
+git cherry-pick + id del commit - para traer un commit en especifico de cualquier rama a cualquier otra rama 
+
+git reflog - muestra toda la informacion de un archivo, incluyendo lo que se haya borrado y con este comando se saca el numero del head para hacer el hard reset ( volver a cualquier punto que se quiera si se cometio un error )
+
+git reset --HARD + id del commit de reflog - para traer de vuelta ese commit y eliminar cualquier cambio posterior
+
+git commit --amend - para agregar un cambio al ultimo commit sin hacer un nuevo commit 
+
+git grep + lo que se quiera buscar - para buscar coincidencia ( git grep azul ) 
+
+git grep -n + lo que se va a buscar - muestra en que linea se encuentra la coincidencia
+
+git grep -c + lo que se va a buscar - muestra la cantidad de coincidencias que encuentra
+
+git log -S "lo que se quiere buscar" - para buscar coincidencias en los commits
+
+git shortlog -sn = muestra cuantos commit han hecho cada miembros del equipo.
+
+git branch -r = se muestran todas las ramas remotas
+
+git branch -a = muesta las branch locales y remotas
+
+
+
