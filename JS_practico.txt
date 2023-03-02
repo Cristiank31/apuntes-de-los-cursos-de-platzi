@@ -1,0 +1,52 @@
+<script></script> - etiqueta para HTML que ejecuta codigo JS, esta etiqueta siempre debe de estar al final de las etiquetas de HTML que se van a trabajar;
+
+<script src="./archivo.js"></script> - etiqueta para que HTML reciva un archivo .JS donde esta todo el codigo JS;
+
+
+document.quarrySelector(``) - para seleccionar de HTML una etiqueta que se quiera trabajar en JS,aunque solo toma la primera coincidencia ej - const h1 = document.quarrySelector(`h1`) - tambien funciona con cualquier clase cambiando en el parentesis la etiqueta(`h1`) por una clase(`.laClase`) o un id(`#elId`);
+
+document.quarrySelectorAll(``) - funciona igual a quarrySelector pero en este caso toma todas las coincidencias que tengan esta etiqueta ej - const todasLosp = document.quarrySelectorAll(`p`)
+
+document.getElementsByClassName() - para seleccionar de HTML una clase que se quiera trabajar en JS ej - const parrafito = document.getElementsByClassName(`nombreDeLaClase`);
+
+document.getElementById() - para seleccionar de HTML un Id que se quiera trabajar en JS ej - const pid = document.getElementById(`pid`);
+
+
+xVarible.innerHTML - es una propiedad en JS que modifica cualquier contenido de HTML, inclusive puede modificar el tipo de etiqueta, como por ej si es un p con x strings se puede modificar por una img  ej - h1.innerHTML = `Hola, soy un troll`;
+
+xVariable.innerText - funciona igual a .innerHTML solo que este solo puede modificar el texto;
+
+xVariable.getAttribute(``) - para leer atributos de un elemento ej - h1.getAttribute(`class`);
+
+xVariable.setAttribute(`atributo que se quiere modificar`,`nuevo valor que se le quiere dar al atributo`) - para modificar el valor de una atributo (clase, id, etc) ej - h1.setAttribute(`class`,`rojo`);
+
+xVarible.classList.add(``) - es una propiedad de JS que funciona para agregar valores a una clase sin modificar el valor que ya tiene esta clase ej - h1.classList.add(`verde`);
+
+xVariable.classList.remove(``) - es una propiedad de JS que funciona para quitar valores a una clase ej - h1.classList.remove(`verde`);
+
+xVariable.classList.contains(``) - nos devuelve un boolean si tiene el elemento tiene la clase que se esta pidiendo ej - h1.classList.contains(`verde`);
+
+xVariable.classList.toggle(``) - agrega o elimina una clase dependiento si esta o no ej - h1.classList.toggle("verde"); si exite la clase "verde" la elimina, si no la agrega; tambien funciona como condicional ej - h1.classList.toggle("verde", i < 10 );añadir/eliminar verde, dependiendo de la condición, i menor que 10;
+
+
+
+xVariable.addEventListener(`evento que se va a escuchar`, funcion que se va a ejecutar cuando pase el evento ) - es una propiedad de JS que nos permite escuchar eventos de HTML  y ejecutar una funcion cuando ocurra el evento ej - 
+
+btn.addEventListener(`click`, btnOnclick);
+
+function btnOnclick(){
+    const sumainputs = Number(input1.value) + Number(input2.value);
+    pResultado.innerText = "El resultado es: " + sumainputs;
+}
+
+Tipos de eventos que se pueden escuchar de HTML:
+
+click - cuando el usuario le de click a un boton;
+mouseup - cuando se le da click derecho o la rueda del mouse;
+mousedown - cuando se mantiene cualquier boton del mouse;
+mouseover - cuando se pasa el cursor por encima;
+keyup - cuando se oprime cualquier tecla del alfabeto o numero;
+keydown - cuando se oprime o se deja oprimmida cualquier tecla que no sea alfanumerica como el tab, alt, las flechas, etc
+keypress - cuando se mantiene cualquier tecla alfanumerica oprimida; 
+copy - cuando se copia algo
+
