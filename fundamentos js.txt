@@ -4,18 +4,47 @@ string (texto)
 boolean (true, false)
 objet ([],{})
 
-typeof - para saber que tipo de valor es.
+typeof - para saber que tipo de valor es;
 
-var - palabra reservada para las variables (var nombre = "Cristian")
+varibles - permite guardar informacion en memoria;
 
-function - palabra reservada para las funciones
-funcion declarativa - function miFuncion (parametros) { operacion que va hacer la funcion}
-funcion expresiva - var function = function (){}
-function saludar (estudiante) { return ( `Hola ${estudiante}`)}
+var - palabra reservada para las variables que ya no se deberia utilizar ya que pueden haber conflictos porque se pueden redeclarar(var nombre = "Cristian");
+let - varible que permite ser re-inicializada pero no se puede re-declarar(let name = "Cristian"; name = "Camilo");
+const - varibale que ni se puede re-inizializar ni re-declarar (const name = "Cristian"; const name = "Camilo" sintaxis error);
+
+Funciones: nos permite ejecutar bloques de codigo;
+
+function - palabra reservada para las funciones;
+funcion declarativa - function miFuncion (parametros) { operacion que va hacer la funcion};
+funcion expresiva - var function = function (){};
+function saludar (estudiante) { return ( `Hola ${estudiante}`)};
 function suma(a,b,c) {
     var resultado = a + b * c;
     return resultado;
-}
+};
+funciones flecha: funcionan igual a funciones expresivas (teniendo que declararlas con una variable const)con la palabra reservada function pero su sintaxis es mas corta, (const name = (parametros) => {return valorretornado}));
+const nombre = (parámetros) => {
+    return valorRetornado
+};
+Las funciones flecha tienen un retorno implícito, es decir, se puede omitir la palabra reservada return, para que el código sea escrito en una sola línea;
+const suma = (num1, num2) => num1 + num2; en este caso retorna (sin ponerle retorn en la funcion) la suma de num1 + num2;
+otros ej de la funcion flecha;
+let a = 4;
+let b = 2;
+() => a + b + 100;
+
+(a, b) => {
+  let chuck = 42;
+  return a + b + chuck;
+
+};
+let bob = a => a + 100;
+
+default params - parametros por defecto - nos sirve para asignar paramentros por defecto en una funcion;
+
+function newUser( name = "Carlos", age = 24, country = "col"){
+	console.log(name,age,country);
+};
 
 coercion - es cuando se cambia el tipo de valor ya sea explicitamente o implicitamente
 implicitamente - 2 + "7" da = 27 (string) o 2 * "7" da = 14 (number)
@@ -160,6 +189,17 @@ var miCarro = {
 Para separar las caracteristicas dentro del objeto se debe de poner siempre una coma(,)
 para mandar a llamar una caracteristica en especifico del objeto se utiliza el nombre de la variable + un punto y la caracteristica o funcion requerida ( miCarro.detallesDelAuto)
 
+destructuracion de objetos - objets destructuring - sirve para destructurar en objetos en los componentes que se necesiten;
+
+let user = {
+	username: "Cristian",
+	nickname: "Hitman",
+	age: 27
+}
+let {username,nickname,age} = user
+console.log(username,age);
+
+
 
 Funcion constructora:
 
@@ -225,6 +265,15 @@ genera un array que solo verifica si la funcion es true or false.
 var existeArticulo = articulos.some(function (articulo) {
   return articulo.costo <= 700
 });
+
+metodo de desestructuracion - 
+
+let fruits = ['Apple', 'Banana', 'Orange',"pineapple"];
+
+let [a,b,c,d] = fruits;
+console.log(b,d);
+console.log(a,fruits[2])
+
 
 
 
