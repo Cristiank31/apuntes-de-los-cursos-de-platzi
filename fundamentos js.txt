@@ -46,6 +46,14 @@ function newUser( name = "Carlos", age = 24, country = "col"){
 	console.log(name,age,country);
 };
 
+function rest - sirve para agregar parametros a una funcion que todavia no estan definidos, metiendolos en un array;
+
+function sum( num, ...values){
+	console.log(values);
+	console.log(num + values[1]);
+
+}
+
 coercion - es cuando se cambia el tipo de valor ya sea explicitamente o implicitamente
 implicitamente - 2 + "7" da = 27 (string) o 2 * "7" da = 14 (number)
 explicitamente - var a = 20 (number) y var b = a + "" daria de resultado el mismo 20 pero como string o tambien var c = string(a) o var d = number(c)
@@ -146,6 +154,7 @@ for (var estudiante of estudiantes) {
 	saludarEstudiantes(estudiante)
 }
 
+
 loop while - funciona de forma parecida al for pero este lo que hace es ir sacando valores de array con el shift
 
 var estudiantes = ["Cristian","Camilo","Fabricio","Roberto"];
@@ -198,6 +207,14 @@ let user = {
 }
 let {username,nickname,age} = user
 console.log(username,age);
+
+spread operator - esta funcionalidad de los objets permite crear un nuevo objet, agregando informacion adicional solo poniendo ... ;
+
+let person = {name:"Cristian", age: 27 };
+let country = "Col";
+
+let data = {...person,country}
+console.log(data) - se crea un objet con la informacion de person + country;
 
 
 
@@ -273,6 +290,19 @@ let fruits = ['Apple', 'Banana', 'Orange',"pineapple"];
 let [a,b,c,d] = fruits;
 console.log(b,d);
 console.log(a,fruits[2])
+
+
+object literals - sirve para retornar los argumentos dados a una funcion en un objet;
+
+function newUser(user, age, country, id){
+	return {
+	   user,
+	   age,		 
+	   country,
+	   id
+        }
+      }
+console.log(newUser("Hitman1228",34,"Col"));
 
 
 
