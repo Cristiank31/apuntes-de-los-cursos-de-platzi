@@ -304,10 +304,85 @@ function newUser(user, age, country, id){
       }
 console.log(newUser("Hitman1228",34,"Col"));
 
+promises- promesas - es una funcion que recive de parametro otra funcion y la ejecuta segun sea el caso;
+
+const anotherFuncion = () => {
+    return new Promise((resolve, reject) => {
+        if (false) {
+            resolve("hey!!");
+        } else {
+            reject ( "whooooops!");
+        }
+    })
+}
+
+anotherFuncion()
+.then(response => console.log(response))
+.catch(err => console.log(err));
+
+class - clases - funciona como una plantilla para crear nuevos objetos con los mismos atributos (variables) y metodos (funciones), para crear este nuevo objeto se crea una una variable llamando a la clase con el funcion new;
+
+class Player {
+    constructor(nombre, colorSombrero){
+        this.nombre = nombre;
+        this.colorSombrero = colorSombrero;
+    }
+    saludar(){
+        return `Hola soy ${this.nombre} y mi sombrero es ${this.colorSombrero}`;
+    };
+    get getnombre(){
+        return this.nombre;
+    }
+    set nombreModificado(nuevoNombre){
+        this.nombre = nuevoNombre;
+    }
+}
+
+let player1 = new Player (`Mario`, `Rojo`);
+let player2 = new Player (`Luigi`,`Verde`);
+
+console.log (player1);
+console.log (player2);
+
+console.log(player2.saludar()); 
+
+console.log(player1.nombre);
+player1.nombre = "Cristian";
+console.log(player1.nombre);
+
+para mandar a llamar un metodo(funcion) dentro de la clase y con get se puede obtener la informacion de un atributo y con set se puede modificar el valor de un atributo; 
 
 
 
+modul - modulos - nos sirve para importar y exportar infromacion de un archivo .JS a otro con 2 formas y para que se pueda trabajar con modulos en una carpeta hay que agregar al archivo package.json el siguiente apartado "type": "module", aunque tambien se pueden omitir esto simplemente agregando la extension .mjs a los archivos que se van a trabajar
+
+1ra forma = export default + el nombre de la funcion o variable que se vaya a exportar
+
+import + el nombre de la funcion o variable que se vaya a importar + from "el origen del archivo que se va a importar" hay que tener presente que se puede requerir poner la extension al archivo que se esta importado en la ruta  ej:
+
+import amigo from "./00-let-const.js";
+
+2da forma = export {function or var que se quiera exportar};
+
+import {the function or var que se quiera importar} + from "el origen del archivo que se va a importar" ej:
+
+import { amigo } from "./00-let-const.js";
 
 
 
+generetor - generadores o funciones generadoras - es un tipo de funcion especial (function*) que tiene varios operadores para retornar valores recordando su estado sin tener que pasarle un valor,
 
+yield funciona paracido a return pero solo en las funciones generadoras ya que en estas cuando se utiliza el return corta el loop,
+
+con la funcion .next imprime el array en posicion 0 pero si se ejecuta  mas veces va a recordar cual fue la posicion que ejecuto y ejecutara la siguiente posicion;
+
+function* iterate(array)  {
+    for (let value of array) {
+        yield value;
+    }
+}
+
+const it = iterate(["Oscar", "Alexa", "David", "Gerlis"]);
+console.log(it.next().value);
+console.log(it.next().value);
+console.log(it.next().value);
