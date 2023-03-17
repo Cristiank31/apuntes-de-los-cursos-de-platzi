@@ -77,7 +77,7 @@ Operadores
 || - para validar si 1 de las 2 condiciones son verdaderas (a || b) si a o b son verdaderas se cumple la condicion
 ++ - para incrementar el numero de una variable en +1 ( var edad = 20 si edad++ edad=41) tambien funciona para disminuir 1 con --
 += - para incrementar el numero de una variable en una cantidad deseada (edad+=5) tambien funciona para disminuir -=
-
+** - para utilizar operaciones matematicas de potenciacion (let potencia = 3**3)
 
 condicional if:
 if - para validar condiciones que solo se ejecutan si la condicion en true (if (true){})
@@ -184,7 +184,7 @@ En este caso se repite el loop hasta que la respuesta sea 4.
 
 
 
-Objets - los objetos son representacion de objetos fisicos que tienes varias caracteristicas en objetos de codigo ( var nombredelavar = {} )
+Objects - los objetos son representacion de objetos fisicos que tienes varias caracteristicas en objetos de codigo ( var nombredelavar = {} )
 
 var miCarro = {
 	marca: "Toyota",
@@ -198,7 +198,7 @@ var miCarro = {
 Para separar las caracteristicas dentro del objeto se debe de poner siempre una coma(,)
 para mandar a llamar una caracteristica en especifico del objeto se utiliza el nombre de la variable + un punto y la caracteristica o funcion requerida ( miCarro.detallesDelAuto)
 
-destructuracion de objetos - objets destructuring - sirve para destructurar en objetos en los componentes que se necesiten;
+destructuracion de objetos - objects destructuring - sirve para destructurar en objetos en los componentes que se necesiten;
 
 let user = {
 	username: "Cristian",
@@ -208,13 +208,29 @@ let user = {
 let {username,nickname,age} = user
 console.log(username,age);
 
+
+
+entries - es una funcion de los objetos para obtener de ellos su informacion y transformarla en arrays (Object.entries(object que se quiera trabajar));
+
+const countries = {MX: "Mexico",CO: "Colombia", PE: "Perú", AR: "Argentina"};
+
+console.log (Object.entries(countries));
+
+
+values - es una funciion de los objetos para obtener un array con los valores de un objeto (Object.values(object que se quiera trabajar));
+
+const countries = {MX: "Mexico",CO: "Colombia", PE: "Perú", AR: "Argentina"};
+
+console.log (Object.values(countries));
+
+
 spread operator - esta funcionalidad de los objets permite crear un nuevo objet, agregando informacion adicional solo poniendo ... ;
 
 let person = {name:"Cristian", age: 27 };
 let country = "Col";
 
 let data = {...person,country}
-console.log(data) - se crea un objet con la informacion de person + country;
+console.log(data) - se crea un object con la informacion de person + country;
 
 
 
@@ -282,6 +298,14 @@ genera un array que solo verifica si la funcion es true or false.
 var existeArticulo = articulos.some(function (articulo) {
   return articulo.costo <= 700
 });
+
+metodo includes - sirve para saber si algo se encuentra en un array retornando un valor booleano;
+
+let numbers = [1,2,3,4,5,6];
+
+console.log(numbers.includes(2))
+
+
 
 metodo de desestructuracion - 
 
@@ -386,3 +410,32 @@ const it = iterate(["Oscar", "Alexa", "David", "Gerlis"]);
 console.log(it.next().value);
 console.log(it.next().value);
 console.log(it.next().value);
+
+
+set and add - añade un nuevo elemento (add) a un objeto set; cuando se utiliza el objeto Set debe este debe ser declarado siempre en mayuscula inical (Set);
+
+const list = new Set();
+
+list.add(`item 1`);
+list.add(`item 2`).add(`item 3`) -para encadenar varios add en una sola linea;
+
+console.log(list)
+
+
+padding - es una funcion que permite midificar string ya sea al inicio o al final,
+
+padStart - sirve para modificar un string en su inicio dandole la cantidad de caracteres que se quiera que este tenga (variable.padStart(#de caracteres total que va a tener el string contando los que ya tenia, `el string que se va a agregar`));
+
+let string1 = `Hello`
+
+console.log(string1.padStart(20, `Yo estoy antes `));
+
+
+padStart - sirve para modificar un string en su final dandole la cantidad de caracteres que se quiera que este tenga (variable.padEnd(#de caracteres total que va a tener el string contando los que ya tenia, `el string que se va a agregar`))
+
+
+let string2 = `Hello`
+
+console.log(string2.padEnd(25, ` Yo voy de ultimo :(`));
+
+
