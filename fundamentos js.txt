@@ -4,6 +4,7 @@ string (texto)
 boolean (true, false)
 objet ([],{})
 
+
 typeof - para saber que tipo de valor es;
 
 varibles - permite guardar informacion en memoria;
@@ -11,6 +12,8 @@ varibles - permite guardar informacion en memoria;
 var - palabra reservada para las variables que ya no se deberia utilizar ya que pueden haber conflictos porque se pueden redeclarar(var nombre = "Cristian");
 let - varible que permite ser re-inicializada pero no se puede re-declarar(let name = "Cristian"; name = "Camilo");
 const - varibale que ni se puede re-inizializar ni re-declarar (const name = "Cristian"; const name = "Camilo" sintaxis error);
+
+
 
 Funciones: nos permite ejecutar bloques de codigo;
 
@@ -22,6 +25,9 @@ function suma(a,b,c) {
     var resultado = a + b * c;
     return resultado;
 };
+
+
+
 funciones flecha: funcionan igual a funciones expresivas (teniendo que declararlas con una variable const)con la palabra reservada function pero su sintaxis es mas corta, (const name = (parametros) => {return valorretornado}));
 const nombre = (parámetros) => {
     return valorRetornado
@@ -40,11 +46,15 @@ let b = 2;
 };
 let bob = a => a + 100;
 
+
+
 default params - parametros por defecto - nos sirve para asignar paramentros por defecto en una funcion;
 
 function newUser( name = "Carlos", age = 24, country = "col"){
 	console.log(name,age,country);
 };
+
+
 
 function rest - sirve para agregar parametros a una funcion que todavia no estan definidos, metiendolos en un array;
 
@@ -54,13 +64,47 @@ function sum( num, ...values){
 
 }
 
-coercion - es cuando se cambia el tipo de valor ya sea explicitamente o implicitamente
-implicitamente - 2 + "7" da = 27 (string) o 2 * "7" da = 14 (number)
+
+
+async function - funciones asincronas - son funciones en las que se les pueden poner un tiempo expecifico antes de ejecutar su bloque de codigo de una promesa;
+
+async - antes de de la funcion flecha indica que es una funcion asincrona y por ese motivo siempre devolvera una promesa,
+
+await - se utiliza esta palabra reservada de JS para decirle al programa que espere el resultado de la promesa para ejecutar el bloque de codigo de la funcion asincrona pero sin detener la ejecucion del resto del codigo;  
+
+const fnAsync = () => {
+    return new Promise((resolve, reject) => {
+        (true)
+        ? setTimeout(() => resolve ("AsynC!!"), 2000)
+        : reject(new Error("Error"));
+    });
+}
+
+const anotherFn = async () => {
+    const somethig = await fnAsync();
+    console.log(somethig);
+    console.log("Hello");
+}
+
+console.log("before");
+anotherFn();
+console.log("After");
+
+
+
+coercion - es cuando se cambia el tipo de valor ya sea explicitamente o implicitamente;
+
+implicitamente - 2 + "7" da = 27 (string) o 2 * "7" da = 14 (number);
+
 explicitamente - var a = 20 (number) y var b = a + "" daria de resultado el mismo 20 pero como string o tambien var c = string(a) o var d = number(c)
+
+
 
 valores verdaderos y valores falsos (para validar que si es falso o verdadero se utiliza en la consola boolean(el valor que se quiera validar))
 vardaderos - cualquier numero mayor a 0," "(cualquier string o espacio vacio),[] (cualquier array asi este vacio),{}(aunque este vacio),function (aunque este vacia),true
 falsos - 0,null,NaN,undefine,false,""(sin espacio).
+
+
 
 Operadores 
 +,-,*,/ - para operaciones matematicas
@@ -78,6 +122,8 @@ Operadores
 ++ - para incrementar el numero de una variable en +1 ( var edad = 20 si edad++ edad=41) tambien funciona para disminuir 1 con --
 += - para incrementar el numero de una variable en una cantidad deseada (edad+=5) tambien funciona para disminuir -=
 ** - para utilizar operaciones matematicas de potenciacion (let potencia = 3**3)
+
+
 
 condicional if:
 if - para validar condiciones que solo se ejecutan si la condicion en true (if (true){})
@@ -98,6 +144,8 @@ tambien se pueden hacer if y else en una sola linea con un sigo de ?;  condition
 var numero = 1;
  
 var resultado = numero === 1 ? "Si, soy un uno" : "No, no soy un uno";
+
+
 
 condicional switch
 
@@ -121,14 +169,23 @@ switch (numero) {
 }
 
 
+
 Arrays - es una estructura de datos que puede guardar varios tipos de valores (strings,numbers,objets u another arrays) y su estructura es, var nombredelavar = [aqui se guardan los valores]
-ej: var frutas = ["Manzanas","Peras","Fresas"],
-nombredelarray.length - para saber la longitud de un array
-var masFrutas = frutas.push("Uvas") - para agregar un valor al final de un array
-var retirarfruta = frutas.pop("Uvas") - para eliminar el ultimo valor de un array
-var nuevafruta = frutas.unshift("Uvas") - para agregar un valor al inicio del array
-var quitarfruta = frutas.shift("Uvas") - para eliminar el primer valor de un array
+ej: var frutas = ["Manzanas","Peras","Fresas"];
+
+nombredelarray.length - para saber la longitud de un array;
+
+var masFrutas = frutas.push("Uvas") - para agregar un valor al final de un array;
+
+var retirarfruta = frutas.pop("Uvas") - para eliminar el ultimo valor de un array;
+
+var nuevafruta = frutas.unshift("Uvas") - para agregar un valor al inicio del array;
+
+var quitarfruta = frutas.shift("Uvas") - para eliminar el primer valor de un array;
+
 var posicion = frutas.indexof(lo que se quiera buscar) - para saber la posicion de un valor dentro de un array
+
+
 
 loops (ciclos) - para repetir funciones en ciclos hasta que la funcion se rompa o deje de ser true.
 
@@ -155,6 +212,18 @@ for (var estudiante of estudiantes) {
 }
 
 
+En el loop for tambien se puede ejecutar con asincronismo solo poniendo la palabra async antes de la funcion y await despues del for en el bloque de ejecucion de la funcion;
+
+async function arrayOfNames(array) {
+    for await (let value of array) {
+        console.log(value);
+    }
+}
+
+const names =arrayOfNames(["Alexa", "Oscar", "David"]);
+console.log("After");
+
+
 loop while - funciona de forma parecida al for pero este lo que hace es ir sacando valores de array con el shift
 
 var estudiantes = ["Cristian","Camilo","Fabricio","Roberto"];
@@ -167,6 +236,9 @@ while (estudiantes.length > 0 ) {
 	var estudiante = estudiantes.shift();
 	saludarEstudiantes(estudiante)
 }
+
+
+
 prompt - imprime un popup al usuario y les permite escribir.
 
 let respuesta = prompt("Cuanto es 2 + 2") - imprime en la pantalla un popup con la la pregunta y guarda en la variable lo que el usuario responda
@@ -198,6 +270,8 @@ var miCarro = {
 Para separar las caracteristicas dentro del objeto se debe de poner siempre una coma(,)
 para mandar a llamar una caracteristica en especifico del objeto se utiliza el nombre de la variable + un punto y la caracteristica o funcion requerida ( miCarro.detallesDelAuto)
 
+
+
 destructuracion de objetos - objects destructuring - sirve para destructurar en objetos en los componentes que se necesiten;
 
 let user = {
@@ -217,11 +291,13 @@ const countries = {MX: "Mexico",CO: "Colombia", PE: "Perú", AR: "Argentina"};
 console.log (Object.entries(countries));
 
 
+
 values - es una funciion de los objetos para obtener un array con los valores de un objeto (Object.values(object que se quiera trabajar));
 
 const countries = {MX: "Mexico",CO: "Colombia", PE: "Perú", AR: "Argentina"};
 
 console.log (Object.values(countries));
+
 
 
 spread operator - esta funcionalidad de los objets permite crear un nuevo objet, agregando informacion adicional solo poniendo ... ;
@@ -232,6 +308,11 @@ let country = "Col";
 let data = {...person,country}
 console.log(data) - se crea un object con la informacion de person + country;
 
+const user = { username: "gndx", age: 34, coutry: "CO" };
+const { username, ...values } = user;
+console.log(username);
+console.log(values);
+	
 
 
 Funcion constructora:
@@ -247,9 +328,9 @@ function carro(marca,modelo,año) {
 var carroNuevo = new carro("Tesla","Model 3", 2019) 
 
 
-Metodos de recorrido de arrays:
 
-estos metodos sirven para filtrar informacion de un array
+Metodos de recorrido de arrays - estos metodos sirven para filtrar informacion de un array
+
 
 metodo filter 
 
@@ -267,12 +348,16 @@ var articulosFiltrados = articulos.filter(function (articulo) {
   return articulo.costo <= 500
 })
 
+
+
 metodo map 
 
 var nombreArticulos = articulos.map(function (articulo) {
   return articulo.nombre
 })
-console.log(nombreArticulos)
+console.log(nombreArticulos);
+
+
 
 metodo find
 
@@ -281,6 +366,8 @@ El método find consiste en encontrar el primer elemento de un array que cumpla 
 var algunArticulo = articulos.find(function (articulo) {
   return (articulo.nombre === "Laptop")
 });
+
+
 
 metodo forEach
 
@@ -291,6 +378,8 @@ articulos.forEach(function (articulo) {
   console.log(articulo.nombre)
 });
 
+
+
 metodo some
 
 genera un array que solo verifica si la funcion es true or false.
@@ -298,6 +387,8 @@ genera un array que solo verifica si la funcion es true or false.
 var existeArticulo = articulos.some(function (articulo) {
   return articulo.costo <= 700
 });
+
+
 
 metodo includes - sirve para saber si algo se encuentra en un array retornando un valor booleano;
 
@@ -316,6 +407,7 @@ console.log(b,d);
 console.log(a,fruits[2])
 
 
+
 object literals - sirve para retornar los argumentos dados a una funcion en un objet;
 
 function newUser(user, age, country, id){
@@ -328,11 +420,19 @@ function newUser(user, age, country, id){
       }
 console.log(newUser("Hitman1228",34,"Col"));
 
+
+
 promises- promesas - es una funcion que recive de parametro otra funcion y la ejecuta segun sea el caso;
+
+.then - es una funcion de las promesas que retorna la promesa siempre y cuando sea resulta como true y despues que hay que poner que se va hacer con lo retornado de la promesa;
+
+.catch - nos retorna el resultado de la promesa pero cuando el resultado es reject(false) y desde hay que poner que se va hacer con lo retornado por la promesa;
+
+.finally - nos permite ejecutar una arrow function al final de una promesa si se requiere;
 
 const anotherFuncion = () => {
     return new Promise((resolve, reject) => {
-        if (false) {
+        if (true) {
             resolve("hey!!");
         } else {
             reject ( "whooooops!");
@@ -341,8 +441,11 @@ const anotherFuncion = () => {
 }
 
 anotherFuncion()
-.then(response => console.log(response))
-.catch(err => console.log(err));
+ .then(response => console.log(response))
+ .catch(err => console.log(err));
+ .finally(()=> console.log('Finally'));
+
+
 
 class - clases - funciona como una plantilla para crear nuevos objetos con los mismos atributos (variables) y metodos (funciones), para crear este nuevo objeto se crea una una variable llamando a la clase con el funcion new;
 
@@ -386,6 +489,7 @@ import + el nombre de la funcion o variable que se vaya a importar + from "el or
 
 import amigo from "./00-let-const.js";
 
+
 2da forma = export {function or var que se quiera exportar};
 
 import {the function or var que se quiera importar} + from "el origen del archivo que se va a importar" ej:
@@ -411,6 +515,21 @@ console.log(it.next().value);
 console.log(it.next().value);
 console.log(it.next().value);
 
+tambien se pueden utilizar las funciones asincronas en los generators con las palabras async antes de la function* y con el await despues del yield;
+
+async function* anotherGenerator() {
+    yield await Promise.resolve(1);
+    yield await Promise.resolve(2);
+    yield await Promise.resolve(3);
+}
+
+const other = anotherGenerator();
+other.next().then(response => console.log(response.value));
+other.next().then(response => console.log(response.value));
+other.next().then(response => console.log(response.value));
+console.log("hello");
+
+
 
 set and add - añade un nuevo elemento (add) a un objeto set; cuando se utiliza el objeto Set debe este debe ser declarado siempre en mayuscula inical (Set);
 
@@ -422,6 +541,7 @@ list.add(`item 2`).add(`item 3`) -para encadenar varios add en una sola linea;
 console.log(list)
 
 
+
 padding - es una funcion que permite midificar string ya sea al inicio o al final,
 
 padStart - sirve para modificar un string en su inicio dandole la cantidad de caracteres que se quiera que este tenga (variable.padStart(#de caracteres total que va a tener el string contando los que ya tenia, `el string que se va a agregar`));
@@ -431,7 +551,7 @@ let string1 = `Hello`
 console.log(string1.padStart(20, `Yo estoy antes `));
 
 
-padStart - sirve para modificar un string en su final dandole la cantidad de caracteres que se quiera que este tenga (variable.padEnd(#de caracteres total que va a tener el string contando los que ya tenia, `el string que se va a agregar`))
+padEnd - sirve para modificar un string en su final dandole la cantidad de caracteres que se quiera que este tenga (variable.padEnd(#de caracteres total que va a tener el string contando los que ya tenia, `el string que se va a agregar`))
 
 
 let string2 = `Hello`
