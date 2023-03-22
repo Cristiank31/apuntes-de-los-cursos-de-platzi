@@ -188,10 +188,17 @@ var quitarfruta = frutas.shift("Uvas") - para eliminar el primer valor de un arr
 
 var posicion = frutas.indexof(lo que se quiera buscar) - para saber la posicion de un valor dentro de un array.
 
+
+obtener el ultimo valor de un array sin saber su indice o el numero total de valores:
+.at - array.at(-1)
+array[array.length -1]; los valores negativos ( < 0) sirven para recorrer los arrays de der a izq (-1 es el ultimo valor, -2 el penultimo valor, -3 el antepenultimo valor y 0 seria el primer valor),
+ 
+
 array.flat() - para aplanar un array (dejar todos los niveles que tenga de profundidad en uno solo), expecificando el el parentesis hasta que nivel de profundidad queremos aplanar;
 
 let array = [1,2,3,4,[4,8,7,9,[4,8,4,2]]];
 console.log (array.flat(1));
+
 
 array.flatMap() - funciona parecido a el metodo .flat pero solo en 1 nivel de profundidad(osea nvl 0 y si se requiere mas niveles es puede encadenar con el .flat primero) y con el resultado de el flat se puede hacer una arrow function para hacer algo con el valor retornado;
 
@@ -482,6 +489,12 @@ Promise.allSettled([promise1, promise2, promise3])
 .then(response => console.log(response));
 
 
+.any - nos regresa la primera promesa que se cumpla de una serie de promesas dadas;
+
+Promise.any([promise1, promise2, promise3])
+.then(response => console.log(response));
+
+
 
 class - clases - funciona como una plantilla para crear nuevos objetos con los mismos atributos (variables) y metodos (funciones), para crear este nuevo objeto se crea una una variable llamando a la clase con el funcion new;
 
@@ -514,6 +527,8 @@ player1.nombre = "Cristian";
 console.log(player1.nombre);
 
 para mandar a llamar un metodo(funcion) dentro de la clase y con get se puede obtener la informacion de un atributo y con set se puede modificar el valor de un atributo; 
+
+si se agrega el caracterer # antes del nombre del metodo, se vuevle privado y solo se puede acceder dentro de la misma clase;
 
 
 
@@ -673,5 +688,13 @@ for (const match of fruit.matchAll(`Apple`)) {
 };
 
 
+
+replace - replaceAll - sirve para modificar palabras de un string por otras palabras la unica diferencia es que replace solo modifica la primera coincidencia y replaceAll modifica todas las coincidencias del string dado- string.replaceAll(`lo que se quiera modificar`, `el  nuevo valor que va a tener`);
+
+const string = "JavaScript es un maravilloso lenguaje de  programacion";
+
+const replacedString = string.replace("JavaScript", "TypeScript");
+
+console.log(replacedString);
 
 
