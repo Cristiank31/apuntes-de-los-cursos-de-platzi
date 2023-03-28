@@ -1,0 +1,88 @@
+callbacks - es una funcion que recive  como argumento otra funcion mas los parametro para ejecutar esta funcion - fnCallback(argumento, funcion a invocar )
+
+function sum(num1, num2) {
+    return num1 + num2;
+}
+
+function rest(num1, num2) {
+    return num1 - num2;
+}
+
+function mult(num1, num2) {
+    return num1 * num2;
+}
+
+function div(num1, num2) {
+    return num1 / num2;
+}
+
+function calc(num1, num2, callback) {
+    return callback(num1, num2);
+};
+
+calc(5,6,div)
+
+
+
+setTimeout - es una funcionalidad de JS que permite agregar un tiempo de espera antes de ejectuar una funcion - setTimeout(functionX,2000(el tiempo que se desee en milisegundos), los argumentos para la funcion que se esta invocando);
+
+setTimeout(function (){console.log('Hola JavaScript');}, 2000);
+
+setTimeout( () => {console.log('Hola JavaScript');}, 3000);
+
+
+function makingOrder(orden) {
+    console.log(`Ready  ${orden}`);
+}
+
+
+function order(orden, callback) {
+    console.log(`Taking order ${orden}`);
+    setTimeout(() => {
+        callback(orden)
+    }, 3000)
+    console.log(`Doing order ${orden}`,);
+}
+
+order('Burger', makingOrder);
+
+
+
+XMLHTTP request - para solicitar informacion a una API;
+
+npm i xmlhttprequest - para poder trabajar estas solicitudes en el entorno local (editor de texto, terminal);
+
+const XMLHttpRequest = require('XMLHttpRequest'); -  para declarar e importar el paquete de xmlhtttprequest;
+
+const API = 'https://api.escuelajs.co/api/v1/products'; - se declara la variable de la API;
+
+validar el archivo API.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
