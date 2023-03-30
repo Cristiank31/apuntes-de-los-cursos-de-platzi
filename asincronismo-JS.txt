@@ -60,6 +60,11 @@ validar el archivo API.js
 
 
 
+otra forma de solicitar informacion a una API es mediante las promesas con fetch(); ya que fetch funciona como promesa sin tener que utilizar el new promise
+
+validar archivo fetch.js
+
+
 
 
 
