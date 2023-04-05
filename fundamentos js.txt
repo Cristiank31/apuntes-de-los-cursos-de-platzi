@@ -76,7 +76,7 @@ function sum( num, ...values){
 
 async function - funciones asincronas - son funciones en las que se les pueden poner un tiempo expecifico antes de ejecutar su bloque de codigo de una promesa;
 
-async - antes de de la funcion flecha indica que es una funcion asincrona y por ese motivo siempre devolvera una promesa,
+async - antes de la funcion flecha indica que es una funcion asincrona y por ese motivo siempre devolvera una promesa,
 
 await - se utiliza esta palabra reservada de JS para decirle al programa que espere el resultado de la promesa para ejecutar el bloque de codigo de la funcion asincrona pero sin detener la ejecucion del resto del codigo;  
 
@@ -89,8 +89,8 @@ const fnAsync = () => {
 }
 
 const anotherFn = async () => {
-    const somethig = await fnAsync();
-    console.log(somethig);
+    const something = await fnAsync();
+    console.log(something);
     console.log("Hello");
 }
 
