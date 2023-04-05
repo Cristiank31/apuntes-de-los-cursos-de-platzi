@@ -66,6 +66,16 @@ validar archivo fetch.js
 
 
 
+fetch - put - post - el metodo post de fetch lo que hace es agregar informacion a una API; el metodo put lo que hace es modificar el contenido de la API;
+
+validar el archivo fetch-post-put.js
+
+
+
+
+
+
+
 
 
 
