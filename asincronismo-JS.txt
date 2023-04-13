@@ -72,6 +72,12 @@ validar el archivo fetch-post-put.js
 
 
 
+implementacion de llamada a API con fetch;
+
+validar carpeta async-landing
+
+
+
 
 
 

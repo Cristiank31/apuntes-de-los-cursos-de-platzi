@@ -3,6 +3,9 @@
 <script src="./archivo.js"></script> - etiqueta para que HTML reciva un archivo .JS donde esta todo el codigo JS;
 
 
+<script defer src="./archivo.js"></script> se agrega defer en la etiqueta script para que el archivo se ejecute paralelamente al HTML ya que si se encuentra en una carpeta src pueden haber problemas en la lectura y ejecucion de el archivo JS
+
+
 document.quarrySelector(``) - para seleccionar de HTML una etiqueta que se quiera trabajar en JS,aunque solo toma la primera coincidencia ej - const h1 = document.quarrySelector(`h1`) - tambien funciona con cualquier clase cambiando en el parentesis la etiqueta(`h1`) por una clase(`.laClase`) o un id(`#elId`);
 
 document.quarrySelectorAll(``) - funciona igual a quarrySelector pero en este caso toma todas las coincidencias que tengan esta etiqueta ej - const todasLosp = document.quarrySelectorAll(`p`)
