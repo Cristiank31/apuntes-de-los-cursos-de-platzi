@@ -562,7 +562,7 @@ button.addEventListener("click", async function () {
 
 
 
-generetor - generadores o funciones generadoras - es un tipo de funcion especial (function*) que tiene varios operadores para retornar valores recordando su estado sin tener que pasarle un valor,
+generator - generadores o funciones generadoras - es un tipo de funcion especial (function*) que tiene varios operadores para retornar valores recordando su estado sin tener que pasarle un valor,
 
 yield funciona paracido a return pero solo en las funciones generadoras ya que en estas cuando se utiliza el return corta el loop,
 
