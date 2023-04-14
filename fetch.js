@@ -39,3 +39,19 @@ function fetchData(urlApi){
     .catch(err => console.log(err)) //detectar un error
     .finally(() => console.log('Finally')); //es opcional para mostrar que se terminó la solicitud
 
+
+    // otro ejemplo, en este caso esta funcion nos permite validar que la url exista y que nos entregue informacion;
+
+    async function fetchData1(url) {
+        try {
+          new URL(url)
+        } catch (error) {
+          throw new Error(`Invalid URL`)
+        };
+        try {
+          const something = await fetch(url);
+          return something.json();
+        } catch {
+          throw new Error(`Something was wrong`)
+        }
+      }

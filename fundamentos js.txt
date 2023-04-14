@@ -219,6 +219,86 @@ console.log(Object.fromEntries(entries));
 
 
 
+Metodos de recorrido de arrays - estos metodos sirven para filtrar informacion de un array
+
+
+metodo filter 
+
+var articulos = [
+  { nombre: "Bici", costo: 3000 },
+  { nombre: "TV", costo: 2500 },
+  { nombre: "Libro", costo: 320 },
+  { nombre: "Celular", costo: 10000 },
+  { nombre: "Laptop", costo: 20000 },
+  { nombre: "Teclado", costo: 500 },
+  { nombre: "Audifonos", costo: 1700 },
+]
+
+var articulosFiltrados = articulos.filter(function (articulo) {
+  return articulo.costo <= 500
+})
+
+
+
+metodo map 
+
+var nombreArticulos = articulos.map(function (articulo) {
+  return articulo.nombre
+})
+console.log(nombreArticulos);
+
+
+
+metodo find
+
+El método find consiste en encontrar el primer elemento de un array que cumpla con la condición especificada en la función 
+
+var algunArticulo = articulos.find(function (articulo) {
+  return (articulo.nombre === "Laptop")
+});
+
+
+
+metodo forEach
+
+Con este metodo no se genera un nuevo array solo devuelve las caracteristicas de los objetos que cumplan el parametro de la funcion.
+
+
+articulos.forEach(function (articulo) {
+  console.log(articulo.nombre)
+});
+
+
+
+metodo some
+
+genera un array que solo verifica si la funcion es true or false.
+
+var existeArticulo = articulos.some(function (articulo) {
+  return articulo.costo <= 700
+});
+
+
+
+metodo includes - sirve para saber si algo se encuentra en un array retornando un valor booleano;
+
+let numbers = [1,2,3,4,5,6];
+
+console.log(numbers.includes(2))
+
+
+
+metodo de desestructuracion - 
+
+let fruits = ['Apple', 'Banana', 'Orange',"pineapple"];
+
+let [a,b,c,d] = fruits;
+console.log(b,d);
+console.log(a,fruits[2])
+
+
+
+
 loops (ciclos) - para repetir funciones en ciclos hasta que la funcion se rompa o deje de ser true.
 
 loop for - 
@@ -361,82 +441,6 @@ var carroNuevo = new carro("Tesla","Model 3", 2019)
 
 
 
-Metodos de recorrido de arrays - estos metodos sirven para filtrar informacion de un array
-
-
-metodo filter 
-
-var articulos = [
-  { nombre: "Bici", costo: 3000 },
-  { nombre: "TV", costo: 2500 },
-  { nombre: "Libro", costo: 320 },
-  { nombre: "Celular", costo: 10000 },
-  { nombre: "Laptop", costo: 20000 },
-  { nombre: "Teclado", costo: 500 },
-  { nombre: "Audifonos", costo: 1700 },
-]
-
-var articulosFiltrados = articulos.filter(function (articulo) {
-  return articulo.costo <= 500
-})
-
-
-
-metodo map 
-
-var nombreArticulos = articulos.map(function (articulo) {
-  return articulo.nombre
-})
-console.log(nombreArticulos);
-
-
-
-metodo find
-
-El método find consiste en encontrar el primer elemento de un array que cumpla con la condición especificada en la función 
-
-var algunArticulo = articulos.find(function (articulo) {
-  return (articulo.nombre === "Laptop")
-});
-
-
-
-metodo forEach
-
-Con este metodo no se genera un nuevo array solo devuelve las caracteristicas de los objetos que cumplan el parametro de la funcion.
-
-
-articulos.forEach(function (articulo) {
-  console.log(articulo.nombre)
-});
-
-
-
-metodo some
-
-genera un array que solo verifica si la funcion es true or false.
-
-var existeArticulo = articulos.some(function (articulo) {
-  return articulo.costo <= 700
-});
-
-
-
-metodo includes - sirve para saber si algo se encuentra en un array retornando un valor booleano;
-
-let numbers = [1,2,3,4,5,6];
-
-console.log(numbers.includes(2))
-
-
-
-metodo de desestructuracion - 
-
-let fruits = ['Apple', 'Banana', 'Orange',"pineapple"];
-
-let [a,b,c,d] = fruits;
-console.log(b,d);
-console.log(a,fruits[2])
 
 
 
