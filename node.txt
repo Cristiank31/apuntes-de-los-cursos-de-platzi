@@ -1,0 +1,51 @@
+npm - Node package manager - es un gestor de paquetes para los proyectos de Node.js disponibles para su uso público y nos permite utilizar fácilmente el código escrito por otros sin necesidad de escribirlo nosotros mismos durante el desarrollo.
+npm init - se utiliza para inicializar un proyecto con node;
+npm -y - para inicializar el proyecto con parametros por defecto;
+npm update - para actualizar un paquete npm a su última versión;
+npm restart - Se utiliza para reiniciar un paquete, para parar y reiniciar un proyecto;
+npm start - Se utiliza para iniciar un paquete cuando es necesario;
+npm stop - Se utiliza para detener la ejecución de un paquete;
+npm version - Muestra la versión actual de npm instalada en tu ordenador;
+npm publish - Se utiliza para publicar un paquete npm en el registro npm. Se utiliza sobre todo cuando has creado tu propio paquete;
+npm install + nombre del paquete a instalar - sirve para instalar paquetes o dependencias en el proyecto ej npm install moment;
+npm install + nombre del paquete a instalar + -D (tambien se puede utilizar en vez de -D, --save-dev) - para utilizar un paquete solo en entorno de desarrollo y no en produccion;
+npm install + nommbre del paquete a instalar + -S (tambien se puede utilizar en vez de -S, --save) - para utlizar el paquete commo dependencia 
+npm install -g + nombre del paquete a instalar - sirve para instalar paquetes de forma global (en toda la pc);
+npm list - para ver los paquetes que se tienene instalados, se puede agregar -g para ver los paquetes instalados globalmente;
+npm install + nombre del paquete + -o - sirve para instalar paquetes de manera opcional que si por algun motivo falla la instalacion o no esta el paquete la aplicacion funciona igual;
+npm install + nombre del paquete + --dry-run - sirve paa simular la instalacion de un paquete para verificar que no hayan conflictos con otros paquetes y despues proceder a su instalacion;
+npm install + nombre del paquete + @version que se quiera instalar - ej npm install json-server@0.15.0 ; sirve para instalar un paquete en una version en especifico con la que se quiera trabajar;
+npm install + nombre del paquete + @latest - ej npm install json-server@latest - sirve para instalar la ultima version de un paquete   
+npm install - sirve para cuando se clona un proyecto y con esto se instalan las dependencias que traiga el archivo package.json que se clono;
+
+scripts en node - se encuentran en el archivo package.json en el apartado "scripts" y con esto nos permite ejecutar acciones con la estructura "nombre del script" : "lo que ejecuta el script", ej validar la carpeta npm;
+
+npx - sirve para ejecutar acciones particulares de un paquete sin tener que instalar el paquete como tal con la siguiente sintaxis - npx + nombre del paquete + nombre del nuevo directorio;
+
+npm outdate- para verificar que paquetes se encuentran desactualizados si no nos muestra nada es porque todos los paquetes se encuentran en su ultima version;
+npm audit - para auditar los paquetes instalados y darnos un informe de las vulnerabilidades y sus posibles correcciones;
+npm audit --json - para funciona parecido a npm audit pero en este caso el informe lo entrega en formato JSON (un objeto);
+npm audit fix - intenta arreglar las vulnerabilidades que pueda tener los paquetes que se tiene instalados;
+npm audit fix --force - intenta arreglar las vulnerabilidades que tienen los paquetes instalando otras dependencias por debajo de ser necesario;
+
+npm uninstall + nombre del paquete - sirve para eliminar paquetes del proyecto que ya no se desee, tambien se puede hacer en el archivo json y eliminarla del listado y despues hay que volver a instalar todos los paquetes con el comando npm install habiendo eliminado primero la carpeta node_modules con el comando rm -rf node_modules
+
+npm built - sirve para compilar el proyecto para alistarlo para produccion
+
+npm buit --dd - sirve para ver que es lo que esta haciendo node en la compilacion del proyecto y asi detectar posibles problemas con los paquetes a la hora de la compilacion;
+
+npm ci - sirve para validar los paquetes que se encuentran deprecated( ya no tienen soporte por parte de sus desarrolladores)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
