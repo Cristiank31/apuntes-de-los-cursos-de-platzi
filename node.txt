@@ -1,6 +1,6 @@
 npm - Node package manager - es un gestor de paquetes para los proyectos de Node.js disponibles para su uso público y nos permite utilizar fácilmente el código escrito por otros sin necesidad de escribirlo nosotros mismos durante el desarrollo.
 npm init - se utiliza para inicializar un proyecto con node;
-npm -y - para inicializar el proyecto con parametros por defecto;
+npm init -y - para inicializar el proyecto con parametros por defecto;
 npm update - para actualizar un paquete npm a su última versión;
 npm restart - Se utiliza para reiniciar un paquete, para parar y reiniciar un proyecto;
 npm start - Se utiliza para iniciar un paquete cuando es necesario;
@@ -9,7 +9,7 @@ npm version - Muestra la versión actual de npm instalada en tu ordenador;
 npm publish - Se utiliza para publicar un paquete npm en el registro npm. Se utiliza sobre todo cuando has creado tu propio paquete;
 npm install + nombre del paquete a instalar - sirve para instalar paquetes o dependencias en el proyecto ej npm install moment;
 npm install + nombre del paquete a instalar + -D (tambien se puede utilizar en vez de -D, --save-dev) - para utilizar un paquete solo en entorno de desarrollo y no en produccion;
-npm install + nommbre del paquete a instalar + -S (tambien se puede utilizar en vez de -S, --save) - para utlizar el paquete commo dependencia 
+npm install + nommbre del paquete a instalar + -S (tambien se puede utilizar en vez de -S, --save) - para utlizar el paquete como dependencia;
 npm install -g + nombre del paquete a instalar - sirve para instalar paquetes de forma global (en toda la pc);
 npm list - para ver los paquetes que se tienene instalados, se puede agregar -g para ver los paquetes instalados globalmente;
 npm install + nombre del paquete + -o - sirve para instalar paquetes de manera opcional que si por algun motivo falla la instalacion o no esta el paquete la aplicacion funciona igual;
